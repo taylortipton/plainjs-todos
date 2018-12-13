@@ -1,48 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // create an array of todos
-    var todosArray = []
+    // create an array of chores
+    var chorelistArray = []
 
-    // target the form
-    var theForm = document.getElementById('the-form')
+    // target chores
+    var chores = document.getElementById('tays-chores')
 
 
     // when the form is submitted, then execute some instructions
-    theForm.addEventListener('submit', function(event) {
+    chores.addEventListener('submit', function(event) {
 
         // prevent the page from reloading
         event.preventDefault()
 
-        // target the new todo input field
-        var newTodoField = document.getElementById('new-todo-field')
+        // target the new chores input field
+        var newChoreField = document.getElementById('new-chore-field')
         
         // store the value of the input field
-        var newTodo = newTodoField.value
+        var newChore = newChoreField.value
 
-        // add the new todo to the todos array
-        todosArray.push(newTodo)
+        // add the new chore to the chores array
+        chorelistArray.push(newChore)
 
-        // clear out the existing todos
-        document.getElementById('list-of-todos').innerHTML = ""
+        // clear out the existing chores
+        document.getElementById('list-of-chores').innerHTML = ""
         
-        // loop over the todos array and create an list item for each todo
+        // loop over the chores array and create an list item for each chore
         // and append each list item to the DOM
-        for(var i = 0; i < todosArray.length; i++) {
-            createListItem(todosArray[i])
+        for(var i = 0; i < chorelistArray.length; i++) {
+            createListItem(chorelistArray[i])
         }
         
     })
 
-    function createListItem(todoText) {
+    function createListItem(tayschores) {
         // create a new list item element
         var newListItem = document.createElement('li')
 
-        // add the todo to the list item text
-        newListItem.innerText = todoText
+        // add the chores to the list item text
+        newListItem.innerText = tayschores
 
         console.log('the new list item', newListItem)
-        var listOfTodos = document.getElementById('list-of-todos')
+        var listofchores = document.getElementById('list-of-chores')
 
-        listOfTodos.appendChild(newListItem)
+        listofchores.appendChild(newListItem)
     }
 })
